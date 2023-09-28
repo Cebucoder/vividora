@@ -169,7 +169,7 @@ function Signup(){
 
     }else{
         console.log('Ready to go');
-        window.location.href = "../user/";
+        window.location.replace("../user/");
         document.getElementById('email').value='';
         document.getElementById('username').value='';
         document.getElementById('password').value='';
