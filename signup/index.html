@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <form action="" id="myForm">
+        <div class="form-section">
+            <div class="top-section">
+                <div class="logo">
+                    <img src="../logo.png" alt="" width="150px">
+                </div>
+                <p>Code practice and mentorship for everyone</p>
+                <a href="">
+                    <div class="btn-github">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <small>Sign Up with Github</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="devider">
+                <small>or</small>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box">
+                    <label id="user-label" for="username">Username</label>
+                    <input id="username" autocomplete="off" type="text" placeholder="Choose a unique username">
+                </div>
+                <div class="input-box">
+                    <label id="user-email" for="email">Email</label>
+                    <input id="email" autocomplete="off" type="text" placeholder="Enter your email address" required>
+                </div>
+                <div class="input-box">
+                    <label id="user-pass" for="password">Password</label>
+                    <input id="password" type="password" placeholder="Choose a password (min 6 chars)">
+                </div>
+                <div class="input-box">
+                    <label id="user-cpass" for="password-confirm">Password Confirmation</label>
+                    <input id="password-confirm" type="password" placeholder="Re-enter your password">
+                </div>
+            </div>
+            
+
+            <button type="button" onclick="Signup()">Sign Up</button>
+
+            <p>Already got an account? <a href="../index.html">Log in</a></p>    
+            <p>Didn't recieve your confirmation email? <a href="">Resend it.</a></p>    
+        </div>
+           
+    </form>
+
+    
+</body>
+<script src="../script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

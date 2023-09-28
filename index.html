@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" id="myForm">
+        <div class="form-section">
+            <div class="top-section">
+                <div class="logo">
+                    <img src="logo.png" alt="" width="150px">
+                </div>
+                <p>Code practice and mentorship for everyone</p>
+                <a href="">
+                    <div class="btn-github">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <small>Sign Up with Github</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="devider">
+                <small>or</small>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box">
+                    <label id="user-email" for="email">Email</label>
+                    <input id="email" autocomplete="off" type="text" placeholder="Enter your email address" required>
+                </div>
+                <div class="input-box">
+                    <label id="user-pass" for="password">Password</label>
+                    <input id="password" type="password" placeholder="Choose a password (min 6 chars)">
+                </div>
+            </div>
+            
+
+            <button type="button" onclick="Signup()">Log In</button>
+
+            <p> Don't have an account? <a href="../exercism/signup/">Sign Up</a></p>    
+            <p>Didn't recieve your confirmation email? <a href="">Resend it.</a></p>    
+        </div>
+           
+    </form>
+
+    
+</body>
+<!-- <script src="script.js"></script> -->
+<script>
+    // Get all input boxes and labels
+const inputBoxes = document.querySelectorAll('.input-box');
+
+// email validation error handler
+let errLabel = document.getElementById('user-email');
+let errInput = document.getElementById('email');
+
+
+
+// password validation error handler
+let errPassLabel = document.getElementById('user-pass');
+let errPassInput = document.getElementById('password');
+ 
+
+// Add event listeners to each input box
+inputBoxes.forEach((inputBox) => {
+    const input = inputBox.querySelector('input');
+    const label = inputBox.querySelector('label');
+
+    const emailError = inputBox.querySelectorAll('#user-email, #email');
+    const passerror = inputBox.querySelectorAll('#password,#user-pass');
+
+    input.addEventListener('focus', () => {
+        inputBox.classList.add('focused');
+        label.setAttribute('class','addcolor');
+
+
+        emailError.forEach((inputBox) => {
+            inputBox.textContent = "Email";
+            inputBox.classList.remove('input-warning', 'label-warning');
+        });
+
+        passerror.forEach((inputBox) => {
+            inputBox.textContent = "Password";
+            inputBox.classList.remove('input-warning', 'label-warning');
+        });
+
+    });
+    input.addEventListener('blur', () => {
+        inputBox.classList.remove('focused');
+        label.removeAttribute('class','addcolor');
+
+    });
+});
+
+
+
+// email and pass matching validation 
+
+function emailValidation(){
+    let emailInput = document.getElementById('email').value;
+    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if(emailPattern.test(emailInput)){
+        console.log("Valid email");
+        return true;
+
+    }else{
+        console.log("Invalid email");
+        errLabel.textContent = "Invalid Email!";
+        errLabel.setAttribute('class','label-warning');
+        errInput.setAttribute('class','input-warning');
+        return false;
+
+    }
+}
+
+function passwordValidation(){
+    let pass = document.getElementById('password').value;
+
+    if(!pass){
+        console.log("Password is empty");
+        errPassLabel.textContent= "Password is empty!";
+        errPassLabel.setAttribute('class','label-warning');
+        errPassInput.setAttribute('class','input-warning');
+        return false;
+    }else{
+        console.log("Match");
+        return true;
+    }
+}
+
+
+
+
+
+
+function Signup(){
+    const isEmailValid = emailValidation();
+    const isPasswordValid = passwordValidation();
+
+    if(!isEmailValid || !isPasswordValid){
+        console.log(isEmailValid);
+        console.log(isPasswordValid);
+        console.log('Not ready');
+
+
+    }else{
+        console.log('Ready to go');
+        window.location.href = "exercism/user/";
+    }
+}
+
+
+</script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
