@@ -157,7 +157,7 @@ function Signup(){
 
     }else{
         console.log('Ready to go');
-        window.location.href = "../user/";
+        window.location.href = "/vivindora/user/";
     }
 }
 
