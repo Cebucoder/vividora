@@ -160,6 +160,7 @@ body{
 .form-section p{
     padding: 6px 0;
     color: #130b43;
+    text-align: center;
 }
 .form-section a{
     color: #2e57e8;
@@ -174,4 +175,25 @@ body{
 .input-warning{
     border: 1px solid red !important;
     box-shadow: 0 0 7px -3px red;
+}
+
+@media (max-width:600px){
+    .form-section{
+        width: 100% !important;
+    }
+    body{
+        padding: 0 !important;
+    }
+}
+@media (max-width:500px){
+    .form-section{
+        width: 100%;
+        padding: 35px 25px !important;
+    }
+}
+@media (max-width:370px){
+   
+    *{
+        font-size: 13px !important;
+    }
 }
