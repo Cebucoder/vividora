@@ -122,7 +122,19 @@ function passwordValidation(){
         errPassInput1.setAttribute('class','input-warning');
         return false;
 
+    }else if((pass.length < 6 && cpass.length < 6)){
+        console.log("Password must be at least 6 characters long.");
+        errPassLabel.textContent= "Password must be at least 6 characters long.";
+        errPassLabel1.textContent= "Password must be at least 6 characters long.";
+        errPassLabel.setAttribute('class','label-warning');
+        errPassLabel1.setAttribute('class','label-warning');
+        errPassInput.setAttribute('class','input-warning');
+        errPassInput1.setAttribute('class','input-warning');
+        return false;
+
+
     }else if(pass === cpass){
+
         console.log("Match");
         return true;
 
@@ -158,6 +170,10 @@ function Signup(){
     }else{
         console.log('Ready to go');
         window.location.href = "../user/";
+        document.getElementById('email').value='';
+        document.getElementById('username').value='';
+        document.getElementById('password').value='';
+        document.getElementById('password-confirm').value='';
     }
 }
 

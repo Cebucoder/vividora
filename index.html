@@ -126,6 +126,14 @@ function passwordValidation(){
         errPassLabel.setAttribute('class','label-warning');
         errPassInput.setAttribute('class','input-warning');
         return false;
+
+    }else if(pass.length < 6){
+        console.log("Password must be at least 6 characters long.");
+        errPassLabel.textContent= "Password must be at least 6 characters long.";
+        errPassLabel.setAttribute('class','label-warning');
+        errPassInput.setAttribute('class','input-warning');
+        return false;
+
     }else{
         console.log("Match");
         return true;
@@ -150,6 +158,8 @@ function Signup(){
     }else{
         console.log('Ready to go');
         window.location.href = "/vivindora/user/";
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
     }
 }
 
