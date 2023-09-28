@@ -68,7 +68,7 @@ function userValidation(){
 
     if(!username){
         console.log("Empty username");
-        errUserLabel.textContent = "username is empty!";
+        errUserLabel.textContent = "Please input username!";
         errUserLabel.setAttribute('class','label-warning');
         errUserInput.setAttribute('class','input-warning');
         return false;
@@ -114,8 +114,8 @@ function passwordValidation(){
 
     if(!pass || !cpass){
         console.log("Password is empty");
-        errPassLabel.textContent= "Password is empty!";
-        errPassLabel1.textContent= "Password Confirmation is empty!";
+        errPassLabel.textContent= "Please input password!";
+        errPassLabel1.textContent= "Please input password Confirmation!";
         errPassLabel.setAttribute('class','label-warning');
         errPassLabel1.setAttribute('class','label-warning');
         errPassInput.setAttribute('class','input-warning');
@@ -157,7 +157,7 @@ function Signup(){
 
     }else{
         console.log('Ready to go');
-        window.location.href = "/vivindora/user/";
+        window.location.href = "../user/";
     }
 }
 

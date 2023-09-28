@@ -40,7 +40,7 @@
 
             <button type="button" onclick="Signup()">Log In</button>
 
-            <p> Don't have an account? <a href="/vivindora/signup/">Sign Up</a></p>    
+            <p> Don't have an account? <a href="./signup/">Sign Up</a></p>    
             <p>Didn't recieve your confirmation email? <a href="">Resend it.</a></p>    
         </div>
            
@@ -121,8 +121,8 @@ function passwordValidation(){
     let pass = document.getElementById('password').value;
 
     if(!pass){
-        console.log("Password is empty");
-        errPassLabel.textContent= "Password is empty!";
+        console.log("Please input password");
+        errPassLabel.textContent= "Please input password!";
         errPassLabel.setAttribute('class','label-warning');
         errPassInput.setAttribute('class','input-warning');
         return false;
