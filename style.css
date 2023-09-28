@@ -188,7 +188,7 @@ body{
 @media (max-width:500px){
     .form-section{
         width: 100%;
-        padding: 35px 25px !important;
+        padding: 35px 35px !important;
     }
 }
 @media (max-width:370px){
